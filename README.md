@@ -136,21 +136,12 @@ product, keyed by product name:
   script requests with a `403 Forbidden` error. If you ever see that error
   again, the protection may have changed — try again later, or ask for
   help adjusting the headers.
-- In `retailer_prices`, the field `retailer_name` holds the *product's*
-  name as that retailer lists it (which can differ between stores or be
-  empty) — **not** the store's name. The scripts always use
-  `retailer_display_name` (falling back to the raw retailer id) for the
-  store name. Don't repurpose `retailer_name` for that.
 - If a product has no price data on a given day (e.g. temporarily
   delisted), it's listed separately under "Δεν βρέθηκαν τιμές για:"
   instead of silently dropped.
 - Using conda? Activate your environment first (`conda activate
   <your-env-name>`) before running either script, so it can find the
   `requests` package.
-- A handful of small `test_*.py` scripts (history, competitors, retailers,
-  stats, categories) exist alongside these for probing the raw API
-  responses directly — useful if PosoKanei changes something and the
-  reports start looking wrong, but not needed for normal day-to-day use.
 
 ## Alternative: ask Claude directly instead of running scripts
 
@@ -309,23 +300,12 @@ Include price history in this report? (Y/N):
   Forbidden`. Αν ξαναδείτε αυτό το σφάλμα, η προστασία μπορεί να έχει
   αλλάξει — δοκιμάστε ξανά αργότερα, ή ζητήστε βοήθεια για προσαρμογή
   των κεφαλίδων.
-- Στο `retailer_prices`, το πεδίο `retailer_name` περιέχει το όνομα *του
-  προϊόντος* όπως το καταχωρεί εκείνο το σούπερ μάρκετ (μπορεί να
-  διαφέρει μεταξύ καταστημάτων ή να είναι κενό) — **όχι** το όνομα του
-  καταστήματος. Τα scripts χρησιμοποιούν πάντα το `retailer_display_name`
-  (με fallback στο ακατέργαστο id) για το όνομα του καταστήματος. Μην το
-  μπερδεύετε με το `retailer_name`.
 - Αν ένα προϊόν δεν έχει δεδομένα τιμής μια συγκεκριμένη ημέρα (π.χ.
   προσωρινά μη διαθέσιμο), εμφανίζεται ξεχωριστά κάτω από "Δεν βρέθηκαν
   τιμές για:" αντί να παραλείπεται σιωπηλά.
 - Χρησιμοποιείτε conda; Ενεργοποιήστε πρώτα το περιβάλλον σας (`conda
   activate <όνομα-περιβάλλοντος>`) πριν τρέξετε οποιοδήποτε από τα δύο
   scripts, ώστε να βρίσκει το πακέτο `requests`.
-- Υπάρχουν μερικά μικρά scripts `test_*.py` (history, competitors,
-  retailers, stats, categories) δίπλα σε αυτά, για να εξετάζετε απευθείας
-  τις ακατέργαστες απαντήσεις του API — χρήσιμα αν το PosoKanei αλλάξει
-  κάτι και οι αναφορές αρχίσουν να φαίνονται λάθος, αλλά δεν χρειάζονται
-  για την καθημερινή χρήση.
 
 ## Εναλλακτικά: ρωτήστε απευθείας τον Claude αντί να τρέχετε scripts
 
