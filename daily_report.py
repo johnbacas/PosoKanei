@@ -211,20 +211,22 @@ def main():
     with txt_path.open("w", encoding="utf-8") as f:
         f.write(f"Σύγκριση τιμών από το PosoKanei - {today}\n")
         f.write("=" * 50 + "\n\n")
-
-        f.write("Τιμές ανά προϊόν:\n")
-        f.write("-" * 30 + "\n\n")
+        
+        f.write("*" * 23 + "\n")
+        f.write("*  Τιμές ανά προϊόν:  *\n")
+        f.write("*" * 23 + "\n\n")
         for i, (name, prices) in enumerate(sorted(price_matrix.items()), start=1):
             if not prices:
                 f.write(f"  {i}. {name}: δεν βρέθηκαν τιμές\n")
                 continue
             parts = ", ".join(f"{r}={p:.2f}" for r, p in sorted(prices.items()))
             f.write(f"  {i}. {name}:\n {parts}\n")
-
-        f.write("\nΦθηνότερα προϊόντα ανά σούπερ μάρκετ:\n")
-        f.write("-" * 60 + "\n\n")
+        
+        f.write("\n" + "*" * 43 + "\n")
+        f.write("*  Φθηνότερα προϊόντα ανά σούπερ μάρκετ:  *\n")
+        f.write("*" * 43 + "\n")
         for retailer in sorted(cheapest_by_retailer.keys()):
-            f.write(f"{retailer}:\n")
+            f.write(f"\n{retailer}:\n")
             for name, price in sorted(cheapest_by_retailer[retailer]):
                 entry = hist_lookup.get(name)
                 if entry and entry.get("global_min") is not None:

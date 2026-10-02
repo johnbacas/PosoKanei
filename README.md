@@ -1,6 +1,6 @@
 # PosoKanei price tracker
 
-**This project was realized utilizing the work done by https://github.com/charistas/posokanei-mcp**
+*(Greek version below / Ελληνική έκδοση παρακάτω)*
 
 Small personal tool that checks your product list against PosoKanei's price
 data and tells you which supermarket is cheapest for each product.
@@ -51,6 +51,10 @@ already picked in that session.
 
 Run `setup_products.py` again any time to add more products, list what you
 have, or remove ones you no longer want.
+
+### Example: a setup session
+
+![setup_products.py example: searching, adding, listing, and removing a product](examples/posokanei_setup.png)
 
 ## Daily run
 
@@ -103,6 +107,20 @@ It then writes, into `reports/`:
 
 Just run `python daily_report.py` each morning — no scheduler needed.
 
+### Example: the generated reports
+
+The "prices per product" section of `_cheapest.txt`:
+
+![Example: prices per product, listing every tracked product's price at every retailer](examples/posokanei_report1.png)
+
+The "cheapest per supermarket" section of the same file, with the historic minimum in parentheses:
+
+![Example: cheapest-per-supermarket section, with historic minimum and which retailer(s) hit it](examples/posokanei_report2.png)
+
+The `_prices.csv` file, opened in a spreadsheet — the same data as a full product × retailer matrix:
+
+![Example: the CSV price matrix opened in a spreadsheet](examples/posokanei_report3.png)
+
 ## `price_history.json` structure
 
 Only updated on `y` runs, but always read by the report. One entry per
@@ -154,8 +172,6 @@ optionally on a daily schedule via a Routine/scheduled task.
 ---
 
 # Παρακολούθηση τιμών PosoKanei
-
-**Αυτό το πρότζεκτ υλοποιήθηκε χρησιμοποιώντας πληροφορίες από https://github.com/charistas/posokanei-mcp**
 
 Μικρό προσωπικό εργαλείο που ελέγχει τη λίστα προϊόντων σας στα δεδομένα
 τιμών του PosoKanei και σας λέει ποιο σούπερ μάρκετ έχει τη φθηνότερη τιμή
@@ -211,6 +227,10 @@ python setup_products.py
 προϊόντα, να δείτε τη λίστα σας, ή να αφαιρέσετε κάποια που δεν θέλετε
 πια.
 
+### Παράδειγμα: μια συνεδρία ρύθμισης
+
+![Παράδειγμα setup_products.py: αναζήτηση, προσθήκη, λίστα και αφαίρεση προϊόντος](examples/posokanei_setup.png)
+
 ## Καθημερινή εκτέλεση
 
 ```bash
@@ -265,6 +285,20 @@ Include price history in this report? (Y/N):
 
 Απλώς τρέξτε `python daily_report.py` κάθε πρωί — δεν χρειάζεται
 χρονοπρογραμματιστής.
+
+### Παράδειγμα: οι αναφορές που δημιουργούνται
+
+Το τμήμα "Τιμές ανά προϊόν" του `_cheapest.txt`:
+
+![Παράδειγμα: τιμές ανά προϊόν, με την τιμή κάθε προϊόντος σε κάθε σούπερ μάρκετ](examples/posokanei_report1.png)
+
+Το τμήμα "Φθηνότερα προϊόντα ανά σούπερ μάρκετ" του ίδιου αρχείου, με την ιστορική ελάχιστη τιμή σε παρένθεση:
+
+![Παράδειγμα: φθηνότερα ανά σούπερ μάρκετ, με την ιστορική ελάχιστη τιμή και σε ποιο/ποια σούπερ μάρκετ](examples/posokanei_report2.png)
+
+Το αρχείο `_prices.csv`, ανοιγμένο σε πρόγραμμα λογιστικών φύλλων — τα ίδια δεδομένα ως πλήρης πίνακας προϊόν × σούπερ μάρκετ:
+
+![Παράδειγμα: ο πίνακας τιμών CSV ανοιγμένος σε λογιστικό φύλλο](examples/posokanei_report3.png)
 
 ## Δομή του `price_history.json`
 
