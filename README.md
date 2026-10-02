@@ -109,15 +109,15 @@ Just run `python daily_report.py` each morning — no scheduler needed.
 
 ### Example: the generated reports
 
-The "prices per product" section of `_cheapest.txt`:
+**The "prices per product" section of `_cheapest.txt`:**
 
 ![Example: prices per product, listing every tracked product's price at every retailer](Examples/posokanei_report1.png)
 
-The "cheapest per supermarket" section of the same file, with the historic minimum in parentheses:
+**The "cheapest per supermarket" section of the same file, with the historic minimum in parentheses:**
 
 ![Example: cheapest-per-supermarket section, with historic minimum and which retailer(s) hit it](Examples/posokanei_report2.png)
 
-The `_prices.csv` file, opened in a spreadsheet — the same data as a full product × retailer matrix:
+**The `_prices.csv` file, opened in a spreadsheet — the same data as a full product × retailer matrix:**
 
 ![Example: the CSV price matrix opened in a spreadsheet](Examples/posokanei_report3.png)
 
@@ -288,18 +288,15 @@ Include price history in this report? (Y/N):
 
 ### Παράδειγμα: οι αναφορές που δημιουργούνται
 
-Το τμήμα "Τιμές ανά προϊόν" του `_cheapest.txt`:
+**Το τμήμα "Τιμές ανά προϊόν" του `_cheapest.txt`:**
 
 ![Παράδειγμα: τιμές ανά προϊόν, με την τιμή κάθε προϊόντος σε κάθε σούπερ μάρκετ](Examples/posokanei_report1.png)
-<div style="display: inline-block; border: 1px solid #ccc; padding: 5px;">
-  <img src="Examples/posokanei_report1.png" alt="Παράδειγμα: τιμές ανά προϊόν, με την τιμή κάθε προϊόντος σε κάθε σούπερ μάρκετ">
-</div>
 
-Το τμήμα "Φθηνότερα προϊόντα ανά σούπερ μάρκετ" του ίδιου αρχείου, με την ιστορική ελάχιστη τιμή σε παρένθεση:
+**Το τμήμα "Φθηνότερα προϊόντα ανά σούπερ μάρκετ" του ίδιου αρχείου, με την ιστορική ελάχιστη τιμή σε παρένθεση:**
 
 ![Παράδειγμα: φθηνότερα ανά σούπερ μάρκετ, με την ιστορική ελάχιστη τιμή και σε ποιο/ποια σούπερ μάρκετ](Examples/posokanei_report2.png)
 
-Το αρχείο `_prices.csv`, ανοιγμένο σε πρόγραμμα λογιστικών φύλλων — τα ίδια δεδομένα ως πλήρης πίνακας προϊόν × σούπερ μάρκετ:
+**Το αρχείο `_prices.csv`, ανοιγμένο σε πρόγραμμα λογιστικών φύλλων — τα ίδια δεδομένα ως πλήρης πίνακας προϊόν × σούπερ μάρκετ:**
 
 ![Παράδειγμα: ο πίνακας τιμών CSV ανοιγμένος σε λογιστικό φύλλο](Examples/posokanei_report3.png)
 
