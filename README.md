@@ -54,7 +54,7 @@ have, or remove ones you no longer want.
 
 ### Example: a setup session
 
-![setup_products.py example: searching, adding, listing, and removing a product](examples/posokanei_setup.png)
+![setup_products.py example: searching, adding, listing, and removing a product](Examples/posokanei_setup.png)
 
 ## Daily run
 
@@ -111,15 +111,15 @@ Just run `python daily_report.py` each morning — no scheduler needed.
 
 The "prices per product" section of `_cheapest.txt`:
 
-![Example: prices per product, listing every tracked product's price at every retailer](examples/posokanei_report1.png)
+![Example: prices per product, listing every tracked product's price at every retailer](Examples/posokanei_report1.png)
 
 The "cheapest per supermarket" section of the same file, with the historic minimum in parentheses:
 
-![Example: cheapest-per-supermarket section, with historic minimum and which retailer(s) hit it](examples/posokanei_report2.png)
+![Example: cheapest-per-supermarket section, with historic minimum and which retailer(s) hit it](Examples/posokanei_report2.png)
 
 The `_prices.csv` file, opened in a spreadsheet — the same data as a full product × retailer matrix:
 
-![Example: the CSV price matrix opened in a spreadsheet](examples/posokanei_report3.png)
+![Example: the CSV price matrix opened in a spreadsheet](Examples/posokanei_report3.png)
 
 ## `price_history.json` structure
 
