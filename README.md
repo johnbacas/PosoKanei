@@ -2,6 +2,9 @@
 
 *(Greek version below / Ελληνική έκδοση παρακάτω)*
 
+## This project was realized utilizing the work done by: https://github.com/charistas/posokanei-mcp
+## Αυτό το πρότζεκτ υλοποιήθηκε χρησιμοποιώντας δεδομένα από: https://github.com/charistas/posokanei-mcp
+
 Small personal tool that checks your product list against PosoKanei's price
 data and tells you which supermarket is cheapest for each product.
 
