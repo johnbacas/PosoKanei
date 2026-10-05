@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).parent
 PRODUCTS_FILE = BASE_DIR / "products.json"
 REPORTS_DIR = BASE_DIR / "reports"
 HISTORY_FILE = BASE_DIR / "price_history.json"
-MIN_INTERVAL_S = 2  # be gentle with the (undocumented) API
+MIN_INTERVAL_S = 1.5  # be gentle with the (undocumented) API
 HEADERS = {
     "accept": "application/json",
     "content-type": "application/json",
@@ -42,6 +42,12 @@ HEADERS = {
     "accept-language": "el-GR,el;q=0.9,en;q=0.8",
 }
 ROUND_DP = 2  # compare prices rounded to cents so 3.4500 vs 3.4501 still ties
+
+# Fallback only - used when a retailer's history entries have no "country" field at all.
+GREEK_RETAILER_IDS = {
+    "bazaar", "lidl", "market_in", "mymarket", "ab_vasilopoulos",
+    "galaxias", "kritikos", "masoutis", "synka", "sklavenitis", "halkiadakis",
+}
 
 
 def load_products():
@@ -62,24 +68,35 @@ def get_product(product_id: str, include_history: bool = False):
     resp.raise_for_status()
     return resp.json()
 
-
 def historic_prices(data: dict):
-    """Real historic minimum price, overall and per retailer, from PosoKanei's own history data.
-
+    """Real historic minimum price, overall and per Greek retailer, from PosoKanei's own history data.
+    
     Returns {"global_min": float | None, "min_per_retailer": {retailer_id: float}}.
     retailer_id here is whatever key PosoKanei's history block uses (e.g. "mymarket") -
     translating that to a display name happens in the caller, since this function has
     no access to retailer_prices.
     """
+    
     daily_prices = (data.get("history") or {}).get("daily_prices") or {}
     min_per_retailer = {}
     for retailer_id, entries in daily_prices.items():
+        if not entries:
+            continue  # nothing to check
+
+        first_country = entries[0].get("country")
+        if first_country is not None:
+            if first_country != "GR":
+                continue  # whole retailer is non-Greek - skip it entirely
+        elif retailer_id not in GREEK_RETAILER_IDS:
+            continue  # no country info at all - fall back to the known-id list
+
         prices = [e["price"] for e in entries if e.get("price") is not None]
         if prices:
             min_per_retailer[retailer_id] = min(prices)
+
     global_min = min(min_per_retailer.values()) if min_per_retailer else None
     return {"global_min": global_min, "min_per_retailer": min_per_retailer}
-
+    
 
 def load_history_file():
     if HISTORY_FILE.exists():
