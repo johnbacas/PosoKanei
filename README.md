@@ -103,6 +103,7 @@ It then writes, into `reports/`:
   ΠΡΟΪΟΝ Α: 3.45  (Ελάχιστη τιμή: 3.30 σε SM1, SM3)
   ```
 
+  [!IMPORTANT]
   The `(Ελάχιστη τιμή: X σε Y, Z)` part shows the lowest price PosoKanei
   has ever recorded for that product (within its ~2-month history window)
   and which retailer(s) hit that low. If a product ties for cheapest
