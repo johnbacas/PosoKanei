@@ -103,8 +103,8 @@ It then writes, into `reports/`:
   ΠΡΟΪΟΝ Α: 3.45  (Ελάχιστη τιμή: 3.30 σε SM1, SM3)
   ```
 
-  [! IMPORTANT]
-  The `(Ελάχιστη τιμή: X σε Y, Z)` part shows the lowest price PosoKanei
+> [!IMPORTANT]
+> The `(Ελάχιστη τιμή: X σε Y, Z)` part shows the lowest price PosoKanei
   has ever recorded for that product (within its ~2-month history window)
   and which retailer(s) hit that low. If a product ties for cheapest
   *today* at more than one retailer, it's listed under all of them.
@@ -280,8 +280,8 @@ Include price history in this report? (Y/N):
   SM1:
   ΠΡΟΪΟΝ Α: 3.45  (Ελάχιστη τιμή: 3.30 σε SM1, SM3)
   ```
-
-  Το τμήμα `(Ελάχιστη τιμή: X σε Y, Z)` δείχνει τη χαμηλότερη τιμή που
+> [!IMPORTANT]
+> Το τμήμα `(Ελάχιστη τιμή: X σε Y, Z)` δείχνει τη χαμηλότερη τιμή που
   έχει καταγράψει ποτέ το PosoKanei για το προϊόν (μέσα στο παράθυρο
   ιστορικού των ~2 μηνών) και σε ποιο/ποια σούπερ μάρκετ. Αν ένα προϊόν
   ισοβαθμεί ως φθηνότερο *σήμερα* σε περισσότερα από ένα σούπερ μάρκετ,
